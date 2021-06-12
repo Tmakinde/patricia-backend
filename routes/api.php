@@ -17,8 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->group(function(){
     Route::post('login', [App\Http\Controllers\LoginController::class, 'login']);
     Route::post('register', [App\Http\Controllers\RegisterController::class, 'register']);
-    Route::Post('logout', [App\Http\Controllers\LoginController::class, 'logout']);
-    
+    Route::post('logout', [App\Http\Controllers\LoginController::class, 'logout']);
+    Route::get('/user', [App\Http\Controllers\v1\UserController::class, 'index']);
+    Route::patch('/user', [App\Http\Controllers\v1\UserController::class, 'update']);
+    Route::delete('/user', [App\Http\Controllers\v1\UserController::class, 'destroy']);
 });
 
 
