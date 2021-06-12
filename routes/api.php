@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->group(function(){
+    Route::post('login', [App\Http\Controllers\LoginController::class, 'login']);
+    Route::post('register', [App\Http\Controllers\RegisterController::class, 'register']);
     
-
 });
 
 
